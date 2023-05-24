@@ -4,6 +4,10 @@
   "description": "Falling Sand Engine",
   "main": "app.js",
 	"type": "module",
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/mkoys/powder.git"
+	},
   "scripts": {
     "start": "node app.js"
   },

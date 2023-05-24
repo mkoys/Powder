@@ -3,11 +3,11 @@ import fs from "fs";
 import path from "path";
 
 const port = 3000;
+const mimeTypesJson = "mimeTypes.json";
 
 const server = http.createServer(requestListener);
-
 const currentPath = new URL(".", import.meta.url).pathname;
-const mimeTypesPath = path.join(currentPath, "mimeTypes.json");
+const mimeTypesPath = path.join(currentPath, mimeTypesJson);
 const mimeTypes = JSON.parse(fs.readFileSync(mimeTypesPath, {encoding: "utf8"})); 
 
 server.listen(port, () => console.log(`Running on http://127.0.0.1:${port}`));

@@ -14,7 +14,7 @@ function requestListener(request, response) {
 	const filteredUrl = splitUrl.filter(filterRule);
 	const fileUrl = filteredUrl.join("/");
 	
-	const currentPath = new URL("..", import.meta.url).href;
+	const currentPath = new URL(".", import.meta.url).pathname;
 	const filePath = path.join(currentPath, fileUrl);
 	
 	fs.readFile(filePath, (error, file) => {
